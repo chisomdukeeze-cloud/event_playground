@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Event Playground</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Simple Event Playground</h1>
+        <p class="subtitle">Interact with elements on the left to fire 20 different DOM events into the live log.</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- LEFT COLUMN: INTERACTIVE CONTROLS -->
+        <div class="controls">
+            
+            <!-- 1. Text Input & Regex Validation -->
+            <div class="card">
+                <h2>1. Text & Regex Validation</h2>
+                <div class="input-group">
+                    <label for="promoInput">Promo Code Format: <code>ABC-1234</code></label>
+                    <input type="text" id="promoInput" placeholder="Try typing, selecting, copying, pasting...">
+                    <div id="regexResult" class="status-badge invalid">Invalid Promo Code</div>
+                </div>
+            </div>
+
+            <!-- 2. Mouse & Wheel Box -->
+            <div class="card">
+                <h2>2. Mouse & Scroll Controls</h2>
+                <div id="mouseBox" class="action-box">
+                    Click, Double-Click, Hover, Right-Click, or Scroll Mouse Wheel here
+                </div>
+            </div>
+
+            <!-- 3. Form, Select & Toggle -->
+            <div class="card">
+                <h2>3. Form & Toggle Events</h2>
+                <form id="demoForm">
+                    <div class="input-group">
+                        <label for="dropdown">Select Option:</label>
+                        <select id="dropdown">
+                            <option value="">-- Choose an option --</option>
+                            <option value="A">Option A</option>
+                            <option value="B">Option B</option>
+                        </select>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="submit" id="submitBtn">Submit Form</button>
+                        <button type="reset" class="secondary" id="resetBtn">Reset Form</button>
+                    </div>
+                </form>
+
+                <details id="toggleDetails" style="margin-top: 15px; cursor: pointer;">
+                    <summary style="font-weight: 600; color: #334155;">Click to toggle details</summary>
+                    <p style="font-size: 0.85rem; color: #64748b; margin-top: 6px;">This toggles element visibility and fires a toggle event.</p>
+                </details>
+            </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN: EVENT LOG -->
+        <div class="log-panel">
+            <div class="card">
+                <div class="log-header">
+                    <h2>Live Event Log (<span id="eventCounter">0</span>)</h2>
+                    <button id="clearBtn" class="secondary" style="padding: 4px 10px; font-size: 0.75rem;">Clear Log</button>
+                </div>
+                <div class="log-box" id="logBox">
+                    <ul class="log-list" id="logList">
+                        <!-- Log items will appear here -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
